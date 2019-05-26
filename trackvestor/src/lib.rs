@@ -1,3 +1,6 @@
+// For the original code, visit:
+// https://github.com/paritytech/ink/blob/master/examples/lang/erc20/src/lib.rs
+
 #![cfg_attr(not(any(test, feature = "test-env")), no_std)]
 
 use ink_core::{
