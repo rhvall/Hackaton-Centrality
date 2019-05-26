@@ -1,0 +1,33 @@
+brew install wabt
+
+# https://cennznetdocs.com/CENNZNet/tutorials/sc_getstarted.md
+curl https://sh.rustup.rs -sSf | sh
+
+# uninstall
+# rustup self uninstall
+
+rustup update
+rustup target add wasm32-unknown-unknown
+
+
+cargo install pwasm-utils-cli --bin wasm-build
+
+cargo install cargo-generate
+
+# https://hackmd.io/mDLtPP2vQdWxw84fiEWiIg?both
+#GUI Docker Installation: www.docker.com
+
+curl -sL https://github.com/cennznet/spin2win/releases/download/0.0.1/cennznet-docker.tar.gz | tar xv
+
+docker build -t cennznet .
+
+docker run --name cennznet -p 9944:9944 -p 30333:30333 cennznet --dev --ws-external
+
+
+#Smartcontract: https://cennznetdocs.com/CENNZNet/tutorials/spin2win.md
+
+cargo generate --git https://github.com/cennznet/contract-template --name sping2weel
+
+cd sping2weel && rustup override set nightly
+
+./build.sh
